@@ -1,0 +1,29 @@
+h1 {
+  color: red;
+}
+
+input {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+.list-wrap {
+  max-width: 300px;
+}
+
+.item-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-wrap > input {
+  width: 85%;
+}
+
+.item-wrap > button {
+  width: 10%;
+}
