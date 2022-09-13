@@ -9,8 +9,9 @@ window.onload = function () {
   if (currentList) {
     const parsedList = JSON.parse(currentList);
 
-    for (let list of parsedList) {
+    for (const list of parsedList) {
       const listTitle = document.createElement("h2");
+
       listTitle.appendChild(document.createTextNode(list));
       listWrapper.appendChild(listTitle);
     }
@@ -47,14 +48,16 @@ addButton.onclick = function () {
 
 saveButton.onclick = function () {
   const alignList = document.getElementsByTagName("h2");
-  let convertListTitle = [];
+  const convertListTitle = [];
 
   if (alignList.length === 0) {
     alert("생성된 리스트가 없습니다.");
   } else {
-    for (let item of alignList) {
+    for (const item of alignList) {
       convertListTitle.push(item.textContent);
     }
     localStorage.setItem("currentList", JSON.stringify(convertListTitle));
   }
 };
+
+function Test() {}
