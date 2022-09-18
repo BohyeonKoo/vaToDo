@@ -44,14 +44,10 @@ saveButton.onclick = function () {
   const alignList = document.getElementsByTagName("h2");
   const convertListTitle = [];
 
-  if (alignList.length === 0) {
-    alert("생성된 리스트가 없습니다.");
-  } else {
-    for (const item of alignList) {
-      convertListTitle.push(item.textContent);
-    }
-    localStorage.setItem("currentList", JSON.stringify(convertListTitle));
+  for (const item of alignList) {
+    convertListTitle.push(item.textContent);
   }
+  localStorage.setItem("currentList", JSON.stringify(convertListTitle));
 };
 
 function handleAddTodo(newListItemWrapper) {
