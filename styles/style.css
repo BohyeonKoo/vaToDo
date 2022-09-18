@@ -14,7 +14,7 @@ button {
   max-width: 300px;
 }
 
-.item-wrap {
+.item-wrap, .todo-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,4 +26,8 @@ button {
 
 .item-wrap > button {
   width: 10%;
+}
+
+.todo-wrap > .checked {
+  text-decoration: line-through;
 }
