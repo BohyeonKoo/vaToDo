@@ -1,10 +1,10 @@
 * {
-	font-family: 'Lato', 'Noto Sans KR', sans-serif;
-	word-break: keep-all;
-	padding: 0;
-	margin: 0;
-	outline: 0;
-	box-sizing: border-box;
+  font-family: "Lato", "Noto Sans KR", sans-serif;
+  word-break: keep-all;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
 }
 
 /* reset */
@@ -83,10 +83,8 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	vertical-align: baseline;
+  border: 0;
+  vertical-align: baseline;
 }
 
 body {
@@ -96,10 +94,9 @@ body {
 .container {
   width: 30%;
   min-width: 600px;
-  height: 100vh;
-  background-color: #F5EDDC;
+  min-height: 100vh;
+  background-color: #f5eddc;
   margin: 0 auto;
-  bg
 }
 
 .banner-section {
@@ -119,20 +116,19 @@ button {
   border-radius: 10px;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  background: #F5EDDC;
+  background: #f5eddc;
   color: #999;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, 
-              transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
 button:hover,
 button:focus {
-  background: rgba(255,255,255,0.2);
-  color: #D6CDA4;
+  background: rgba(255, 255, 255, 0.2);
+  color: #d6cda4;
 }
 
 .list-wrap {
@@ -141,21 +137,23 @@ button:focus {
   margin-top: 50px;
 }
 
-.item-wrap, .todo-wrap {
+.item-wrap,
+.todo-wrap {
   height: 65px;
   margin-top: 20px;
   padding: 0 20px;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255, 255, 255, 0.4);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid #D6CDA4;
+  border: 2px solid #d6cda4;
   border-radius: 15px;
 }
 
-.item-wrap, .todo-wrap > h2 {
+.item-wrap,
+.todo-wrap > h2 {
   font-size: 16px;
-  color: #D6CDA4;
+  color: #d6cda4;
 }
 
 .item-wrap > input {
@@ -172,4 +170,7 @@ button:focus {
 
 .todo-wrap > button {
   margin: 50px;
+}
+
+root {
 }

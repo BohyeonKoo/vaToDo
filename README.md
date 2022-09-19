@@ -14,3 +14,5 @@
 - OneDay Category
 - Login / Logout => localStorage or session or cookie / id or email
 - Style
+
+- Headless component
