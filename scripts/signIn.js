@@ -13,6 +13,7 @@ const handleLoginClicekd = () => {
         localStorage.setItem("isSign", true);
         window.location.href = "list.html";
       } else {
+        console.log("asd")
         alert("일치하는 정보가 없습니다.");
       }
     }
