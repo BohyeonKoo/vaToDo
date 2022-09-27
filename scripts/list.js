@@ -1,14 +1,24 @@
 const targetBody = document.body;
-const listWrap = targetBody.querySelector(".container > ul");
 const createForm = targetBody.querySelector(".container > form");
+let renderList = [];
 
-const renderLists = (list) => {
-  if (list && list.length !== 0) {
-    const parsedList = list.map((el, idx) =>
+//INIT
+document.addEventListener("DOMContentLoaded", function () {
+  const currentList = localStorage.getItem("currentList");
+  renderList = [...JSON.parse(currentList)];
+  renderedTabs();
+  renderedLists();
+});
+
+//List
+const renderedLists = () => {
+  const listWrap = targetBody.querySelector(".container > ul");
+  if (renderList && renderList.length !== 0) {
+    const parsedList = renderList.map((el, idx) =>
       `<li>
         <div>
           <h2 class=${el.type && el.type === "done" ? "done-title" : null}>${el.title ? el.title : "To Do"}</h2>
-          <span>${el.date ? "날짜: " + el.date : "date"}</span>
+          <span>${el.date ? "날짜: " + convertDateFormat(el.date) : "date"}</span>
         </div>
         <div>
           <button onclick="handleClearRemove(${idx}, 'clear')">${el.type ? el.type === "done" ? "해제" : "완료" : "완료"}</button>
@@ -16,7 +26,7 @@ const renderLists = (list) => {
         </div>
       </li>`
     );
-    listWrap.insertAdjacentHTML('beforeend', parsedList);
+    listWrap.innerHTML = parsedList;
   } else {
     listWrap.innerHTML = '<h1>리스트가 존재하지 않습니다.</h1>';
   }
@@ -44,14 +54,7 @@ const handleClearRemove = (idx, type) => {
   window.location.reload();
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const currentList = localStorage.getItem("currentList");
-  renderLists(JSON.parse(currentList));
-});
-
-const handleAddTodo = () => {
-  createForm.style.display = "flex";
-}
+const handleAddTodo = () => createForm.style.display = "flex";
 
 const handleFormAction = (type) => {
   if (type === 'add') {
@@ -74,8 +77,43 @@ const handleFormAction = (type) => {
   }
 }
 
+//Tabs
+const renderedTabs = () => {
+  const tabsWrap = targetBody.querySelector(".tab-section > ul");
+  const tabTitles = ["All", "Today", "Weeks"];
+
+  const tabList = tabTitles.map((el, idx) =>
+    `<li>
+      <button onclick="handleClickedTab(${idx})">${el}</button>
+    </li>`
+  );
+  tabsWrap.innerHTML = tabList;
+}
+
+const handleClickedTab = (idx) => {
+  const currentList = JSON.parse(localStorage.getItem("currentList"));
+  if (idx === 0) {
+    renderList = currentList;
+    renderedLists();
+  } else {
+    const today = Date.now();
+    const convertDate = new Date(today);
+
+    const returnList = currentList.filter(el => convertDateFormat(el.date) == convertDateFormat(convertDate))
+    renderList = returnList;
+    renderedLists();
+  }
+}
+
+//Sign
 const handleSignOut = () => {
   localStorage.setItem("isSign", false);
   window.location.href = "../index.html";
 };
+
+//etc.
+const convertDateFormat = (time) => {
+  const convertDate = new Date(time);
+  return convertDate.toISOString().split('T')[0];
+}
 
