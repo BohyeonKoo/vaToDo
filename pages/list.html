@@ -8,28 +8,29 @@
     <link rel="stylesheet" href="../styles/style.css">
   </head>
   <body>
-    <nav>
-      <button onclick="handleSignOut()">Sign Out</button>
-    </nav>
-    <div class="banner-section">BANNER</div>
-    <div class="tab-section">
-      <ul></ul>
-    </div>
     <div class="list-container">
-      <ul></ul>
-      <form>
-        <div>
-          <input type="text">
-          <input type="date">
-          <button type="reset">X</button>
-        </div>
-        <div>
-          <button type="button" onclick="handleFormAction('add')">생성</button>
-          <button type="button" onclick="handleFormAction('cancle')">취소</button>
-        </div>
-      </form>
-      <div>
-        <button onclick="handleAddTodo()">투두리스트 추가</button>
+      <div class="banner-section">
+        <nav>
+          <button onclick="handleSignOut()">Sign Out</button>
+        </nav>
+      </div>
+      <div class="tab-section">
+        <ul></ul>
+        <button onclick="handleAddTodo()">추가</button>
+      </div>
+      <div class="container">
+        <ul></ul>
+        <form>
+          <div>
+            <input type="text">
+            <input type="date">
+            <button type="reset">초기화</button>
+          </div>
+          <div>
+            <button type="button" onclick="handleFormAction('add')">생성</button>
+            <button type="button" onclick="handleFormAction('cancle')">취소</button>
+          </div>
+        </form>
       </div>
     </div>
 

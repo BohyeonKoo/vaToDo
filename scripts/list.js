@@ -18,7 +18,7 @@ const renderedLists = () => {
       `<li>
         <div>
           <h2 class=${el.type && el.type === "done" ? "done-title" : null}>${el.title ? el.title : "To Do"}</h2>
-          <span>${el.date ? "날짜: " + convertDateFormat(el.date) : "date"}</span>
+          <span>${el.date ? "Date : " + convertDateFormat(el.date) : "date"}</span>
         </div>
         <div>
           <button onclick="handleClearRemove(${idx}, 'clear')">${el.type ? el.type === "done" ? "해제" : "완료" : "완료"}</button>

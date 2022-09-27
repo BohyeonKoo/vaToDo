@@ -89,6 +89,10 @@ video {
   vertical-align: baseline;
 }
 
+ul {
+  list-style-type: none;
+}
+
 body {
   background-color: var(--main);
 }
@@ -147,19 +151,191 @@ body {
   color: var(--sub);
 }
 
-.list-container > form {
+.list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.list-container > div {
+   width: 100%;
+}
+
+.banner-section {
+  height: 300px;
+  background-image: url("https://images.unsplash.com/photo-1644329843491-99edfc83de04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
+  background-position: bottom;
+  background-size: cover;
+}
+
+.banner-section > nav {
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.banner-section > nav > button {
+  height: 25px;
+  background-color: transparent;
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--main);
+  line-height: 1;
+  border-radius: 5px;
+}
+
+.tab-section > ul > li > button {
+  height: 25px;
+  background-color: transparent;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--main);
+  line-height: 1;
+  border-radius: 5px;
+}
+
+.tab-section {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--main);
+  background-color: #DFF6FF;
+}
+
+.tab-section > ul {
+  display: flex;
+  justify-content: center;
+}
+
+.tab-section > button {
+  width: 50px;
+  height: 30px;
+  background-color: var(--main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  color: white;
+}
+
+.container {
+  height: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.container > ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container > ul > h1 {
+  font-size: 16px;
+  text-align: center;
+}
+
+.container > ul > li {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #999;
+}
+
+.container > ul > li > div > h2 {
+  font-size: 16px;
+}
+
+.container > ul > li > div > span {
+  font-size: 12px;
+  color: #777;
+}
+
+.container > ul > li > div > button {
+  width: 40px;
+  height: 25px;
+  background-color: transparent;
+  border: 2px solid var(--main);
+  border-radius: 5px;
+  color: var(--main);
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 1;
+  padding: 0;
+}
+
+.container > form {
+  position: fixed;
+  top: 30%;
+  width: 400px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+  border: 1px solid #999;
   display: none;
+  background-color: white;
+}
+
+.container > form > div {
+  display: flex;
+  justify-content: center;
+}
+
+.container > form > div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container > form > div:first-of-type > input {
+  margin-right: 10px;
+  border: none;
+  border-bottom: 1px solid var(--main);
+}
+
+.container > form > div:first-of-type > button {
+  background-color: transparent;
+  padding: 0;
+  color: var(--main);
+}
+
+.container > form > div:last-of-type {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.container > form > div:last-of-type > button {
+  width: 50px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  margin: 0 5px;
+  background-color: var(--main);
+  font-size: 12px;
+  color: white;
+}
+
+.container > form > div:last-of-type > button:last-of-type {
+  background-color: transparent;
+  border: 2px solid var(--main);
+  color: var(--main);
+  font-weight: bold;
 }
 
 .done-title {
   text-decoration: line-through;
-}
-
-.banner-section {
-  height: 250px;
-  background-image: url("https://images.unsplash.com/photo-1644329843491-99edfc83de04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
-  background-position: bottom;
-  background-size: cover;
+  color: #999;
 }
 
 input {
@@ -184,47 +360,6 @@ button {
 button:hover {
   background: #256D85;
   color: white;
-}
-
-.list-wrap {
-  width: 77%;
-  margin: 0 auto;
-  margin-top: 50px;
-}
-
-.item-wrap,
-.todo-wrap {
-  height: 65px;
-  margin-top: 20px;
-  padding: 0 20px;
-  background-color: rgba(255, 255, 255, 0.4);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px solid #d6cda4;
-  border-radius: 15px;
-}
-
-.item-wrap,
-.todo-wrap > h2 {
-  font-size: 16px;
-  color: #d6cda4;
-}
-
-.item-wrap > input {
-  width: 85%;
-}
-
-.item-wrap > button {
-  width: 10%;
-}
-
-.todo-wrap > .checked {
-  text-decoration: line-through;
-}
-
-.todo-wrap > button {
-  margin: 50px;
 }
 
 :root {
