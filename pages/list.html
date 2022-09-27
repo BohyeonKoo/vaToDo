@@ -5,16 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>List</title>
+    <link rel="stylesheet" href="../styles/list.css">
   </head>
   <body>
     <nav>
       <button onclick="handleSignOut()">Sign Out</button>
     </nav>
+    <div class="banner-section">banner</div>
+    <div class="tab-section">
+      <ul>
+        <li><button>All</button></li>
+        <li><button>Day</button></li>
+        <li><button>Week</button></li>
+      </ul>
+    </div>
     <div class="container">
-      <div class="banner-section"></div>
-      <div class="list-wrap"></div>
-      <button class="add-btn">ADD</button>
-      <button class="save-btn">SAVE</button>
+      <ul></ul>
+      <form>
+        <div>
+          <input type="text">
+          <input type="date">
+          <button type="reset">X</button>
+        </div>
+        <div>
+          <button type="button" onclick="handleFormAction('add')">생성</button>
+          <button type="button" onclick="handleFormAction('cancle')">취소</button>
+        </div>
+      </form>
+      <div>
+        <button onclick="handleAddTodo()">투두리스트 추가</button>
+      </div>
     </div>
 
     <script type="text/javascript" src="../scripts/list.js"></script>

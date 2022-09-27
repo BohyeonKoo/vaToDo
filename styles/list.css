@@ -1,0 +1,7 @@
+.container > form {
+  display: none;
+}
+
+.done-title {
+  text-decoration: line-through;
+}
