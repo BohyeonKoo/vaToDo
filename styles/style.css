@@ -1,5 +1,7 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
 * {
-  font-family: "Lato", "Noto Sans KR", sans-serif;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   word-break: keep-all;
   padding: 0;
   margin: 0;
@@ -88,15 +90,69 @@ video {
 }
 
 body {
-  background-color: white;
+  background-color: var(--main);
 }
 
-.container {
+.sign-container, .list-container {
   width: 30%;
   min-width: 600px;
   min-height: 100vh;
-  background-color: #f5eddc;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5eddc;
+}
+
+.sign-container > div{
+  width: 60%;
+}
+
+.sign-container > div > label{
+  font-size: 12px;
+  color: #777;
+}
+
+.sign-container > div > input{
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid var(--main);
+  background-color: transparent;
+  margin-bottom: 30px;
+}
+
+.sign-container > button{
+  width: 60%;
+  height: 40px;
+  margin-top: 30px;
+  background-color: var(--main);
+}
+
+.sign-container > button:last-of-type{
+  display: none;
+}
+
+.sign-container > a{
+  margin-top: 10px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #06283D;
+  cursor: pointer;
+}
+
+.sign-container > a:hover{
+  text-decoration: underline;
+  color: var(--sub);
+}
+
+.list-container > form {
+  display: none;
+}
+
+.done-title {
+  text-decoration: line-through;
 }
 
 .banner-section {
@@ -116,19 +172,18 @@ button {
   border-radius: 10px;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  background: #f5eddc;
   color: #999;
   cursor: pointer;
   text-align: center;
+  font-size: 12px;
   transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-button:hover,
-button:focus {
-  background: rgba(255, 255, 255, 0.2);
-  color: #d6cda4;
+button:hover {
+  background: #256D85;
+  color: white;
 }
 
 .list-wrap {
@@ -172,5 +227,8 @@ button:focus {
   margin: 50px;
 }
 
-root {
+:root {
+  --main: #06283D;
+  --sub: #256D85;
+  --back: #f5eddc;
 }
